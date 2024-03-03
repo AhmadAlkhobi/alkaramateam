@@ -1,17 +1,14 @@
-import 'dart:convert';
+
 
 import 'package:get/get.dart';
-// ignore: unused_import
-import 'package:http/http.dart';
+
+
 import 'package:shared_preferences/shared_preferences.dart';
-// ignore: unused_import
-import 'package:sp1_e_commerce/core/data/models/post_model.dart';
-// ignore: unused_import
-import 'package:sp1_e_commerce/core/data/models/product_info.dart';
-import 'package:sp1_e_commerce/core/data/models/token_info.dart';
+
+
 import 'package:sp1_e_commerce/core/enums/data_type.dart';
-// ignore: unused_import
-import 'package:sp1_e_commerce/main.dart';
+
+
 
 class SharedPrefrenceRepository {
   SharedPreferences pref = Get.find<SharedPreferences>();
@@ -68,32 +65,6 @@ class SharedPrefrenceRepository {
     } else
       return [];
   }
-
-  TokenInfo getTokenInfo() {
-    return TokenInfo.fromJson(jsonDecode(getPrefrnce(PREF_TOKEN_INFO)));
-
-    //!--- get String from shared
-    ////* getPrefrnce(PREF_TOKEN_INFO)
-    //!--- String to json using jsonDecode
-    ////*jsonDecode
-    //!-- create token info mode from josn
-    ////*TokenInfo.fromJson
-  }
-
-  void setTokenInfo(TokenInfo info) {
-    setPrefrnce(
-        type: DataType.STRING,
-        key: PREF_TOKEN_INFO,
-        value: jsonEncode(info.toJson()));
-
-    // //!--- info to json
-    //* Map<String, dynamic> infoMap = info.toJson();
-    // //!-- json to string using jsonEncode
-    //* String strInfo = jsonEncode(infoMap);
-    // //!-- Save string in shared
-    //* setPrefrnce(type: DataType.STRING, key: PREF_TOKEN_INFO, value: strInfo);
-  }
-
   void setAppLnaguage(String code) {
     setPrefrnce(type: DataType.STRING, key: PREF_APP_LANG, value: code);
   }

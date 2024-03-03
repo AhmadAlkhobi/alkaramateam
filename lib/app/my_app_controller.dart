@@ -1,4 +1,5 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:sp1_e_commerce/core/services/connectivity_service.dart';
 import 'package:sp1_e_commerce/ui/shared/utils.dart';
@@ -13,7 +14,7 @@ class MyAppController extends GetxController {
     connectivityService.connectivityStatusController.stream.listen((event) {
       isOnline = event == ConnectivityStatus.ONLINE;
     });
-
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     super.onInit();
   }
 }

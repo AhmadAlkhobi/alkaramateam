@@ -1,8 +1,3 @@
-// ignore: unused_import
-import 'package:sp1_e_commerce/core/data/models/token_info.dart';
-// ignore: unused_import
-import 'package:sp1_e_commerce/core/data/models/user_info.dart';
-
 class CommonResponse<T> {
   int? statusCode;
   late String message;
@@ -12,7 +7,7 @@ class CommonResponse<T> {
     statusCode = json['statusCode'];
 
     if (getStatus) {
-      data = json['response'];
+      data = json['response']['data'];
     } else {
       if (json['response']['message'].toString().isNotEmpty) {
         message = json['response']['message'];

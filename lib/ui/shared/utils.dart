@@ -9,6 +9,23 @@ import 'package:sp1_e_commerce/core/data/repository/shared_prefrence_repository.
 import 'package:sp1_e_commerce/core/services/connectivity_service.dart';
 import 'package:sp1_e_commerce/core/services/location_service.dart';
 import 'package:sp1_e_commerce/ui/shared/colors.dart';
+import 'package:sp1_e_commerce/ui/views/main_view/home_view/home_controller.dart';
+
+TableRow buildRow(List<String> cells, {bool isSlelcted = false}) => TableRow(
+        children: cells.map((cell) {
+      final style = TextStyle(
+          fontWeight: isSlelcted ? FontWeight.bold : FontWeight.normal,
+          fontSize: screenWidth(28));
+
+      return Padding(
+        padding: EdgeInsetsDirectional.all(screenWidth(100)),
+        child: Center(
+            child: Text(
+          cell,
+          style: style,
+        )),
+      );
+    }).toList());
 
 void customLoader() => BotToast.showCustomLoading(toastBuilder: (context) {
       return Container(
@@ -23,17 +40,6 @@ void customLoader() => BotToast.showCustomLoading(toastBuilder: (context) {
         ),
       );
     });
-
-bool isEmailValid(String email) {
-  return RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-      .hasMatch(email);
-}
-
-bool isValidPassword(String password) {
-  return RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
-      .hasMatch(password);
-}
 
 Future<XFile?> chooseImage(ImageSource imageSource) async {
   return await ImagePicker().pickImage(source: imageSource);
@@ -61,5 +67,5 @@ ConnectivityService get connectivityService => Get.find<ConnectivityService>();
 Connectivity get connectivity => Get.find<Connectivity>();
 
 LocationService get locationService => Get.find<LocationService>();
-
+HomeController get homeController => Get.find<HomeController>();
 bool isOnline = false;

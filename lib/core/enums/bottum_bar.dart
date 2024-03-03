@@ -1,7 +1,7 @@
-enum Bottum_bar {
+enum BottumBar {
   HOME,
-  MEUSIUM,
-  RSULTS,
-  ABOUTCLUP,
+  RESULTS,
   MATCHES,
+  ABOUTCLUP,
+  MEUSIUM,
 }

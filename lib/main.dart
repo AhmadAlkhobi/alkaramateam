@@ -8,13 +8,15 @@ import 'package:sp1_e_commerce/core/data/repository/shared_prefrence_repository.
 import 'package:sp1_e_commerce/core/services/connectivity_service.dart';
 import 'package:sp1_e_commerce/core/services/location_service.dart';
 
+import 'ui/views/main_view/home_view/home_controller.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Get.put(ConnectivityService());
   Get.put(Connectivity());
   Get.put(LocationService());
-
+  Get.lazyPut(() => HomeController());
   Get.lazyPut(() => SharedPrefrenceRepository());
 
   await Get.putAsync(() async {

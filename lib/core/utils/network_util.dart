@@ -9,8 +9,7 @@ import 'package:sp1_e_commerce/core/enums/request_type.dart';
 import 'package:http_parser/http_parser.dart';
 
 class NetworkUtil {
-  static String baseUrl = 'fakestoreapi.com';
-  static String postBaseUrl = 'jsonplaceholder.typicode.com';
+  static String baseUrl = 'alkaramaaa.000webhostapp.com';
 
   static Future<dynamic> sendRequest({
     required RequestType type,

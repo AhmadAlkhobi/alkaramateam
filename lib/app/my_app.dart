@@ -7,8 +7,7 @@ import 'package:sp1_e_commerce/core/data/repository/shared_prefrence_repository.
 import 'package:sp1_e_commerce/core/services/connectivity_service.dart';
 import 'package:sp1_e_commerce/core/translation/app_translation.dart';
 import 'package:sp1_e_commerce/ui/shared/utils.dart';
-
-import 'package:sp1_e_commerce/ui/views/splash_view/splash_view.dart';
+import 'package:sp1_e_commerce/ui/views/main_view/main_view.dart';
 
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
@@ -25,14 +24,11 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         locale: getLocal(),
         translations: AppTranslation(),
-        title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         builder: BotToastInit(), //1. call BotToastInit
         navigatorObservers: [BotToastNavigatorObserver()],
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: SplashView(),
+
+        home: MainView(),
       ),
     );
   }
@@ -48,7 +44,3 @@ Locale getLocal() {
   else
     return Locale('fr', 'FR');
 }
-
-
-
-//Get.toNamed('/details');
