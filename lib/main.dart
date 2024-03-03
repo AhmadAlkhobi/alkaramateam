@@ -12,7 +12,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Get.put(ConnectivityService());
-//  Get.put(CartService());
   Get.put(Connectivity());
   Get.put(LocationService());
 

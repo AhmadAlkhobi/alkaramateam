@@ -1,13 +1,16 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
+// ignore: unused_import
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sp1_e_commerce/core/data/models/cart_model.dart';
+// ignore: unused_import
 import 'package:sp1_e_commerce/core/data/models/post_model.dart';
+// ignore: unused_import
 import 'package:sp1_e_commerce/core/data/models/product_info.dart';
 import 'package:sp1_e_commerce/core/data/models/token_info.dart';
 import 'package:sp1_e_commerce/core/enums/data_type.dart';
+// ignore: unused_import
 import 'package:sp1_e_commerce/main.dart';
 
 class SharedPrefrenceRepository {
@@ -19,7 +22,6 @@ class SharedPrefrenceRepository {
   String PREF_LOGGIN_INFO = 'loggin_info';
   String PREF_TOKEN_INFO = 'token_info';
   String PREF_APP_LANG = 'app_language';
-  String PREF_CART_LIST = 'cart_list';
 
   //* --- ----
 
@@ -100,22 +102,7 @@ class SharedPrefrenceRepository {
     if (pref.containsKey(PREF_APP_LANG)) {
       return getPrefrnce(PREF_APP_LANG);
     } else {
-      return 'en';
-    }
-  }
-
-  void setCartList(List<CartModel> list) {
-    setPrefrnce(
-        type: DataType.STRING,
-        key: PREF_CART_LIST,
-        value: CartModel.encode(list));
-  }
-
-  List<CartModel> getCartList() {
-    if (pref.containsKey(PREF_CART_LIST)) {
-      return CartModel.decode(getPrefrnce(PREF_CART_LIST));
-    } else {
-      return [];
+      return 'ar';
     }
   }
 

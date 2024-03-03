@@ -5,9 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 import 'package:sp1_e_commerce/core/data/repository/shared_prefrence_repository.dart';
-import 'package:sp1_e_commerce/core/services/cart_service.dart';
 import 'package:sp1_e_commerce/core/services/connectivity_service.dart';
 import 'package:sp1_e_commerce/core/services/location_service.dart';
 import 'package:sp1_e_commerce/ui/shared/colors.dart';
@@ -62,7 +60,6 @@ SharedPrefrenceRepository get storege => Get.find<SharedPrefrenceRepository>();
 ConnectivityService get connectivityService => Get.find<ConnectivityService>();
 Connectivity get connectivity => Get.find<Connectivity>();
 
-CartService get cartService => Get.find<CartService>();
 LocationService get locationService => Get.find<LocationService>();
 
 bool isOnline = false;

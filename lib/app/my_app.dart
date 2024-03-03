@@ -10,6 +10,7 @@ import 'package:sp1_e_commerce/ui/shared/utils.dart';
 
 import 'package:sp1_e_commerce/ui/views/splash_view/splash_view.dart';
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
